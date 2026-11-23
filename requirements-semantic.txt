@@ -1,0 +1,3 @@
+# Optional local open-vocabulary retrieval; keep the core app usable without it.
+-r requirements.txt
+open_clip_torch>=3.2,<4

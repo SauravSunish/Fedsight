@@ -1,0 +1,10 @@
+# Local workbench, synthetic demo, matching, security and evaluation.
+streamlit>=1.40,<2
+numpy>=1.26,<3
+pandas>=2.1,<4
+Pillow>=10,<14
+scikit-learn>=1.7,<2
+cryptography>=44,<51
+networkx>=3.3,<4
+plotly>=6,<8
+reportlab>=4,<6
