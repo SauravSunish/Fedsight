@@ -35,7 +35,33 @@ FedSight currently includes:
 - synthetic walkthrough data for demonstrating the interface without real people or recordings;
 - tests for core security and evidence-integrity behavior.
 
-Screenshots below use synthetic or empty-site data. They demonstrate the interface, not measured model performance.
+The first two examples below are actual model outputs from trimmed CITIC-MTMC
+research-dataset clips. The interface screenshots use synthetic or empty-site data.
+Neither set is measured benchmark performance.
+
+### Real-video pipeline examples
+
+![Three HallSeg frames with FedSight's configured YOLO11n person detections](docs/screenshots/citic-hallseg-detections.jpg)
+
+**HallSeg sequence.** These panels were selected from a fixed two-second scan of
+the 60-second clip to show both a detection and a short multi-person moment. Boxes
+and confidence values are raw YOLO11n outputs, not verified identities or ground truth.
+
+![HallWide and PC camera frames with FedSight's configured YOLO11n person detections](docs/screenshots/citic-multicamera-detections.jpg)
+
+**Same-time multi-camera sample.** HallWide and PC at 29 seconds show how the
+prototype can ingest different viewpoints. The boxes do not claim that people in
+the two views are the same person; cross-camera association requires separate
+features, timing constraints, and human review.
+
+Source: A. Carro-Lagoa et al., **CITIC-MTMC**, capture 1, trimmed to 60 seconds
+for this prototype. Dataset and derived frames are used under
+[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+See the [dataset repository](https://github.com/GTEC-UDC/citic-mtmc-dataset)
+and [dataset DOI](https://doi.org/10.5281/zenodo.17511785). The generated images
+are derived examples under the same CC BY-NC-SA 4.0 terms.
+
+### Interface walkthrough
 
 <details open>
 <summary><strong>Case overview</strong></summary>
