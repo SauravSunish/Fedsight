@@ -35,17 +35,39 @@ FedSight currently includes:
 - synthetic walkthrough data for demonstrating the interface without real people or recordings;
 - tests for core security and evidence-integrity behavior.
 
-The first two examples below are actual model outputs from trimmed CITIC-MTMC
+The use-case examples below are actual outputs generated from trimmed CITIC-MTMC
 research-dataset clips. The interface screenshots use synthetic or empty-site data.
 Neither set is measured benchmark performance.
 
 ### Real-video pipeline examples
+
+#### 1. Recorded-video detection
 
 ![Three HallSeg frames with FedSight's configured YOLO11n person detections](docs/screenshots/citic-hallseg-detections.jpg)
 
 **HallSeg sequence.** These panels were selected from a fixed two-second scan of
 the 60-second clip to show both a detection and a short multi-person moment. Boxes
 and confidence values are raw YOLO11n outputs, not verified identities or ground truth.
+
+#### 2. Source-linked video review
+
+![Three sequential PC-camera review frames with sampled detections](docs/screenshots/citic-recorded-video-review.jpg)
+
+**Recorded-review sequence.** Three source timestamps show the sampled detector
+output changing as a person moves through the corridor. The lower-confidence box
+also illustrates why a reviewer must inspect the original frames rather than rely
+on a count alone.
+
+#### 3. Within-camera tracking
+
+![HallSeg frame with a portable motion and IoU tracking trail](docs/screenshots/citic-within-camera-tracking.jpg)
+
+**Local track trail.** FedSight's portable motion/IoU fallback associated sampled
+detections during the first six seconds. The local track number groups observations
+inside this clip; it is not a person identity. Windows Application Control blocked
+the optional native LAP dependency during this run, so the recorded fallback was used.
+
+#### 4. Multi-camera review
 
 ![HallWide and PC camera frames with FedSight's configured YOLO11n person detections](docs/screenshots/citic-multicamera-detections.jpg)
 
@@ -54,11 +76,29 @@ prototype can ingest different viewpoints. The boxes do not claim that people in
 the two views are the same person; cross-camera association requires separate
 features, timing constraints, and human review.
 
+#### 5. Spatial projection
+
+![HallSeg detections projected onto the CITIC floor plan](docs/screenshots/citic-spatial-projection.jpg)
+
+**Calibrated ground-plane example.** Detection footpoints from HallSeg at three
+seconds are projected onto the published floor map using the dataset's four-point
+planar homography calibration. The result depends on calibration accuracy and a
+ground-plane assumption; a plausible location does not establish identity.
+
+#### 6. Replay and rule triage
+
+![PC replay frame with an illustrative review zone and candidate detections](docs/screenshots/citic-replay-rule-triage.jpg)
+
+**Review-zone example.** A configured region is evaluated against sampled
+detections during replay. The resulting count is a candidate flag for a person to
+review, not an automated intrusion or intent conclusion. Physical live-camera
+performance still depends on the camera, workstation and stream conditions.
+
 Source: A. Carro-Lagoa et al., **CITIC-MTMC**, capture 1, trimmed to 60 seconds
 for this prototype. Dataset and derived frames are used under
 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
 See the [dataset repository](https://github.com/GTEC-UDC/citic-mtmc-dataset)
-and [dataset DOI](https://doi.org/10.5281/zenodo.17511785). The generated images
+and [dataset DOI](https://doi.org/10.5281/zenodo.17511785). All generated images
 are derived examples under the same CC BY-NC-SA 4.0 terms.
 
 ### Interface walkthrough
