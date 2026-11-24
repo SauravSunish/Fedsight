@@ -1900,7 +1900,7 @@ def spatial_intelligence(service, case, actor):
 
     with tab_feasibility:
         st.subheader("Cross-Camera Transit & Alibi Analysis")
-        st.write("Calculates required transit speeds between cross-camera track pairs. Human walking speeds exceed 2.0 m/s only when running; transit speeds > 8.0 m/s are physically impossible without vehicles.")
+        st.write("Calculates estimated transit speeds between camera observations. Estimates depend on calibration, timing and the selected points. Compare unusually high speeds with the original footage and route conditions.")
 
         track_dict = {t["id"]: t for t in tracks}
         ppm = calibrations[0].get("pixels_per_metre", 20.0) if calibrations else 20.0

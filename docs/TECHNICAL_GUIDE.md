@@ -156,7 +156,7 @@ synthetic check with `make eval-chat` or `python scripts/eval_investigator.py`.
   clock metadata, per-source jobs, detector/tracker/OSNet settings and provenance.
 - **Video review:** source player, clip-time density and event markers, sampled
   tracklet overlays on a selected original frame, grid/list/timeline views, and
-  generated silent annotated clips up to 30 seconds. Derived clips are encrypted
+  generated silent annotated clips. Derived clips are encrypted
   in the evidence vault and included in case bundles with SHA-256 hashes. Overlays
   interpolate nearby saved detections and do not track every video frame; browser
   support for the local MP4 encoder varies.

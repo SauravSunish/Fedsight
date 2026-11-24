@@ -150,7 +150,7 @@ Model weights, camera recordings, credentials and case databases are excluded fr
 
 FedSight is a single-workstation prototype with a local Streamlit UI. It is intended for experimentation and human review. It does not provide production authentication, enterprise deployment, validated identity recognition or a complete frame-by-frame index. Floor-plan analysis depends on camera calibration and timing quality. Live RF/CSI sensing is future work.
 
-Local evidence is encrypted and changes are recorded in an HMAC audit chain. Reviewer names are local attribution labels. Protect and back up encryption keys separately. Losing them makes associated encrypted evidence unreadable. Exported case bundles may contain plaintext evidence.
+Original assets and case record payloads are encrypted, and changes are recorded in an HMAC audit chain. Some database metadata and live aggregate statistics remain visible on disk. Reviewer names are local attribution labels. Protect and back up encryption keys separately. Losing them makes associated encrypted evidence unreadable. Exported case bundles may contain plaintext evidence.
 
 ## Development
 

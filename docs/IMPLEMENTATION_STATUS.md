@@ -1,4 +1,6 @@
-# FedSight 2.0 implementation status
+# FedSight implementation status
+
+This is a historical implementation snapshot. Consult the README and current code for present capabilities.
 
 This build implements the roadmap's local forensic workflow. It does not claim
 that an eight-week research programme or production validation has been completed.
